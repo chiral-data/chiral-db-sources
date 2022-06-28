@@ -43,7 +43,6 @@ impl SourceChembl {
         self.data.remove("chembl_id");
     }
 
-
     pub fn load(&mut self) {
         self.data.clear();
 
@@ -66,6 +65,10 @@ impl SourceChembl {
 
     pub fn get(&self, id: &ChemblID) -> Option<&EntryChembl> {
         self.data.get(id)
+    }
+
+    pub fn get_all(&self) -> &DataChembl {
+        &self.data
     }
 
     pub fn len(&self) -> usize {
@@ -94,7 +97,7 @@ mod test_chembl {
     fn test_source_chembl() {
         let mut sc = SourceChembl::new();
         sc.load();
-        assert_eq!(sc.len(), 9999);
+        assert_eq!(sc.len(), 99);
         let ec = sc.get(&String::from("CHEMBL503634")).unwrap();
         assert_eq!(ec.smiles, "COc1c(O)cc(O)c(C(=N)Cc2ccc(O)cc2)c1O");    
         assert_eq!(ec.inchi, "InChI=1S/C15H15NO5/c1-21-15-12(19)7-11(18)13(14(15)20)10(16)6-8-2-4-9(17)5-3-8/h2-5,7,16-20H,6H2,1H3");
