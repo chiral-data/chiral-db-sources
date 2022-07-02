@@ -2,6 +2,14 @@
 name = "chiral-db-sources"
 version = "0.1.0"
 edition = "2018"
+authors = ["Qin Wan <rogerwq@gmail.com>"]
+license = "MIT"
+description = "Data Source Management for ChiralDB"
+repository = "https://github.com/chiral-data/chiral-db-sources"
+homepage = "https://github.com/chiral-data/chiral-db-sources"
+documentation = "https://docs.rs/chiral-db-sources"
+keywords = ["cheminformatics", "openbabel"]
+categories = ["science"]
 
 [dependencies]
 rand = "0.8.5"
