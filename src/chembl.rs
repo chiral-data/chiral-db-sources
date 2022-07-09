@@ -56,6 +56,13 @@ impl SourceChembl {
         sc
     }
 
+    pub fn new_default() -> Self {
+        let mut sc = Self { data: DataChembl::new() };
+        let chembl_txt = std::env::var_os("CHIRAL_DB_CHEMBL_TXT").expect("CHIRAL_DB_CHEMBL_TXT to be set as the default source");
+        sc.load(&std::path::Path::new(&chembl_txt));
+        sc
+    }
+
     fn sanitize(&mut self) {
         self.data.remove("chembl_id");
     }
