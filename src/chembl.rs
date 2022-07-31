@@ -6,7 +6,7 @@
 //! ``` 
 //! use chiral_db_sources::chembl::SourceChembl;
 //! 
-//! let filepath = std::path::Path::new("./data/chembl_30_chemreps_100.txt");
+//! let filepath = std::path::Path::new("../chiral-db-example-data/ChEMBL/chembl_30_chemreps_100.txt");
 //! let sc = SourceChembl::new(&filepath);
 //! assert_eq!(sc.len(), 100);
 //! let ec = sc.get(&String::from("CHEMBL503634")).unwrap();
@@ -129,7 +129,7 @@ mod test_chembl {
 
     #[test]
     fn test_source_chembl() {
-        let filepath = std::path::Path::new("./data/chembl_30_chemreps_100.txt");
+        let filepath = std::path::Path::new("../chiral-db-example-data/ChEMBL/chembl_30_chemreps_100.txt");
         let sc = SourceChembl::new(&filepath);
         assert_eq!(sc.len(), 100);
         let ec = sc.get(&String::from("CHEMBL503634")).unwrap();
